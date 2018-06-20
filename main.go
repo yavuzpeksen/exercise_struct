@@ -18,8 +18,9 @@ func (p *Person) Talk(){
 	fmt.Println("Hi, name is:",p.name)
 }
 
-func (w *Worker) TalkJob(){
-	fmt.Println("I have also a job:", w.job)
+func (w *Worker) TalkAsWorker(){
+	w.Talk()
+	fmt.Println("I have a job:", w.job)
 }
 
 func (p *Person) ChangeName(){
@@ -58,8 +59,7 @@ func main() {
 					Person:Person{"Meggie"},
 					job:"Software"	,	
 				}
-	workerObj.Talk()
-	workerObj.TalkJob()
+	workerObj.TalkAsWorker()
 	
 	fmt.Println(GetNames(personObj, workerObj.Person))
 }
